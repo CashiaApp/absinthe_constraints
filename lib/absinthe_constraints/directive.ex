@@ -49,6 +49,7 @@ defmodule AbsintheConstraints.Directive do
   def expand_constraints(args, %{type: type} = node),
     do: do_expand(args, node, get_args(type))
 
+  defp get_args(:id), do: @string_args
   defp get_args(:string), do: @string_args
   defp get_args(:integer), do: @number_args
   defp get_args(:float), do: @number_args
